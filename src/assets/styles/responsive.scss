@@ -44,6 +44,24 @@
       }
     }
   }
+  .staff {
+    margin-top: 25px !important;
+  }
+  .customTab {
+    .nav {
+      &-item {
+        min-width: 80px !important;
+      }
+      &-link {
+        font-size: $font-12;
+      }
+    }
+  }
+  .active {
+    &::before {
+      background-color: transparent !important;
+    }
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

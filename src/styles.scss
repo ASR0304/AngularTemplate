@@ -214,8 +214,8 @@ footer {
       font-size: $font-12;
     }
     &:focus {
-      outline: 0;
-      box-shadow: 0 0 0 0 #000;
+      outline: 0 !important;
+      box-shadow: 0 0 0 0 #000 !important;
     }
   }
 }
