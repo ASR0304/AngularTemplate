@@ -24,6 +24,12 @@
 @mixin bg-color-mix($color, $percent) {
   background-color: color-mix(in srgb, $color $percent, white);
 }
+@mixin random-bgr() {
+  background: rgb(random(255), random(255), random(255));
+}
+@mixin box-shadow {
+  box-shadow: 1px 1px 10px grey;
+}
 //end mixin functions
 
 // scrollbar custom css

@@ -13,9 +13,10 @@
     .ul-nav-menu {
       li {
         &:last-child {
+          width: max-content !important;
           label,
           span {
-            font-size: $font-10 !important;
+            display: none;
           }
         }
       }
@@ -62,6 +63,25 @@
       background-color: transparent !important;
     }
   }
+
+  .body-pd {
+    padding-left: calc($nav-width) !important;
+  }
+  .l-navbar {
+    &.open {
+      left: 0% !important;
+    }
+  }
+  .input-group {
+    button {
+      display: none;
+    }
+  }
+  .breadcrumb {
+    ol {
+      display: none !important;
+    }
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -77,6 +97,24 @@
   }
   footer {
     min-width: 100%;
+  }
+  .body-pd {
+    padding-left: calc($nav-width) !important;
+  }
+  .l-navbar {
+    &.open {
+      left: 0% !important;
+    }
+  }
+  .input-group {
+    button {
+      display: none;
+    }
+  }
+  .breadcrumb {
+    ol {
+      display: none !important;
+    }
   }
 }
 

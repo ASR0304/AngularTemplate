@@ -1,0 +1,38 @@
+@import "../../assets/styles/variable.scss";
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  h6 {
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin: 0;
+  }
+  ol {
+    margin: 0;
+    float: right;
+    padding: 10px 20px;
+    li {
+      position: relative;
+      padding: 0 15px;
+      a {
+        color: $body-text-color;
+      }
+      &.active {
+        a {
+          color: $body-text-light-color;
+        }
+      }
+      + li {
+        &::before {
+          content: ">";
+          position: absolute;
+          left: -4px;
+          color: $body-text-color;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
