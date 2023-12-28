@@ -121,7 +121,7 @@
         color: $body-text-color;
         font-size: $font-12;
         &::placeholder {
-          color: $body-text-color;
+          color: $body-text-light-color;
           font-size: $font-12;
         }
         &:focus {
