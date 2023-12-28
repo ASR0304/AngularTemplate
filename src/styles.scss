@@ -1,0 +1,392 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import "../src/assets/styles/variable.scss";
+@import "../src/assets/styles/utilities.scss";
+@import "../src/assets/styles/responsive.scss";
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  margin: $header-height 0 0 0;
+  font-family: $body-font;
+  font-size: $font-14;
+  transition: 0.5s;
+  background-color: $body-background;
+  color: $body-text-light-color;
+  min-height: calc(100vh - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 100px !important;
+}
+a {
+  text-decoration: none;
+}
+
+.show {
+  left: 0;
+}
+.body-pd {
+  padding-left: calc($nav-width + 1rem);
+}
+//start header
+.header {
+  width: 100%;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: $header-background;
+  z-index: $z-fixed;
+  transition: 0.5s;
+  &_toggle {
+    color: $body-text-light-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+  &_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 40px;
+    }
+  }
+  .ul-nav-menu {
+    height: 100%;
+    li {
+      margin: 0 10px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      &:last-child {
+        background-color: #31373c;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 180px;
+        img {
+          width: 32px;
+          height: 32px;
+          margin: 0 1rem;
+        }
+        label {
+          width: 100%;
+          float: left;
+          font-size: $font-14;
+        }
+        span {
+          font-size: $font-12;
+        }
+      }
+    }
+    &.right {
+      justify-content: flex-end;
+    }
+    &.left {
+      justify-content: flex-start;
+    }
+    &.center {
+      justify-content: center;
+    }
+  }
+}
+//end header
+
+//start footer
+footer {
+  width: calc(100% - $nav-width);
+  background-color: $footer-color;
+  color: $body-text-light-color;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  a {
+    font-size: $font-12;
+    color: $body-text-light-color;
+    cursor: default;
+  }
+}
+//end footer
+.l-navbar {
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: $nav-width;
+  height: 100vh;
+  background-color: $side-Nav-color;
+  padding: 0.5rem 1rem 0 0;
+  transition: 0.5s;
+  z-index: $z-fixed;
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  &_logo {
+    @include sideNavGrid;
+    margin-bottom: 2rem;
+    &-name {
+      color: $white-color;
+      font-weight: 700;
+    }
+  }
+  &_link {
+    @include sideNavGrid;
+    position: relative;
+    color: $side-Nav-color-light;
+    margin-bottom: 0.5rem;
+    transition: 0.3s;
+    column-gap: 1.5rem;
+    &:hover {
+      object {
+        width: 20px;
+        height: 20px;
+        transition: 0.1s;
+        #document svg {
+          width: 20px;
+          height: 20px;
+          fill: #fff;
+        }
+      }
+    }
+    object,
+    img {
+      width: 16px;
+      height: 16px;
+      transition: 0.1s;
+    }
+    &:hover {
+      color: $white-color;
+    }
+  }
+  &_icon {
+    font-size: 1.25rem;
+  }
+}
+.active {
+  color: $white-color;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: $white-color;
+  }
+}
+.height-100 {
+  height: 100vh;
+}
+//header input
+.input-group {
+  button {
+    background-color: #1a1d21;
+    border: 0;
+    position: relative;
+  }
+  .form-control {
+    border-radius: 0;
+    background-color: #1a1d21;
+    color: $body-text-light-color;
+    font-size: $font-12;
+    border: 0;
+    &::placeholder {
+      color: $body-text-light-color;
+      opacity: 1;
+      font-size: $font-12;
+    }
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0 #000;
+    }
+  }
+}
+
+//start panel-box
+.panel_box {
+  background-color: $panel-bg;
+  color: $body-text-color;
+  margin: 25px 0;
+  table {
+    width: 100%;
+    tr {
+      td {
+        padding: 10px 0;
+        &:last-child {
+          color: $body-text-light-color;
+          font-size: $font-14;
+        }
+      }
+    }
+  }
+  &.personalInfo {
+    padding: 25px;
+    h6 {
+      padding: 0 0 10px 0;
+    }
+  }
+  &.clientInfo {
+    padding: 0;
+    table {
+      tr {
+        &:first-child {
+          td {
+            border-bottom: 1px dashed #32383e;
+          }
+        }
+        td {
+          > i {
+            margin: 0 15px;
+            cursor: pointer;
+          }
+          &:first-child {
+            width: 60%;
+            padding: 12px 0px 12px 25px;
+          }
+          &:last-child {
+            width: 40%;
+            padding: 12px 25px 12px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+//end panel-box
+
+//start customised button
+.btn {
+  font-size: $font-14;
+  min-width: 80px;
+  > i {
+    margin-right: 5px;
+  }
+  &-primary {
+    background-color: bg-color-mix($primary-color, 10%);
+    color: $primary-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $primary-color;
+    }
+  }
+  &-secondary {
+    background-color: bg-color-mix($secondary-color, 10%);
+    color: $secondary-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $secondary-color;
+    }
+  }
+  &-success {
+    background-color: bg-color-mix($success-color, 10%);
+    color: $success-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $success-color;
+    }
+  }
+  &-danger {
+    background-color: #fa896b1a;
+    color: $danger-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $danger-color;
+    }
+  }
+  &-warning {
+    @include bg-color-mix($warning-color, 10%);
+    color: $warning-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $warning-color;
+    }
+  }
+  &-info {
+    background-color: $info-color;
+    border: 1px solid $info-color;
+    color: $white-color;
+    &:hover {
+      color: $info-color;
+      background-color: transparent;
+    }
+  }
+  &-light {
+    @include bg-color-mix($light-color, 10%);
+    color: $light-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $light-color;
+    }
+  }
+  &-dark {
+    @include bg-color-mix($dark-color, 10%);
+    color: $dark-color;
+    border: 0px;
+    &:hover {
+      color: $white-color;
+      background-color: $dark-color;
+    }
+  }
+  &-ordinary {
+    background-color: $header-background;
+    color: $body-text-color;
+    border: 0px;
+    &:hover {
+      color: $header-background;
+      background-color: $body-text-color;
+    }
+  }
+}
+//end customised button
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: calc($header-height + 1rem) 0 0 0;
+    padding-left: calc($nav-width);
+  }
+  .header {
+    height: calc($header-height + 1rem);
+    padding: 0 2rem 0 calc($nav-width + 1rem);
+    &_img {
+      width: 40px;
+      height: 40px;
+      img {
+        width: 45px;
+      }
+    }
+  }
+  .l-navbar {
+    left: 0;
+    padding: 1rem 0rem 0 0;
+  }
+  .open {
+    width: calc($nav-width + 156px);
+  }
+  .body-pd {
+    padding-left: calc($nav-width + 188px);
+  }
+}

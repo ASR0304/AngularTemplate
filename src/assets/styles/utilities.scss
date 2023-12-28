@@ -1,0 +1,48 @@
+// this file is used for common utilities and scss functions
+.none {
+  display: none;
+}
+//universal css, if class has ul-*
+[class*="ul-"] {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+//start mixin functions
+@mixin sideNavGrid {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 0rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  @content;
+}
+@mixin bg-color-mix($color, $percent) {
+  background-color: color-mix(in srgb, $color $percent, white);
+}
+//end mixin functions
+
+// scrollbar custom css
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
